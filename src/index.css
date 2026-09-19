@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #09090b; /* Neutro escuro absoluto */
+    color: #f4f4f5;
+    overflow-y: auto;
+  }
+  .font-heading {
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  }
+  .font-code {
+    font-family: 'Space Grotesk', monospace;
+  }
+}
+
+/* =========================================================================
+   DESTAQUES EM LED: VERDE, AMARELO E VERMELHO (SINALIZAÇÃO INDUSTRIAL NEON)
+   ========================================================================= */
+
+/* 1. VERDE LED (LIBERADA / OPERAÇÃO NORMAL) */
+.led-text-verde {
+  color: #4ade80;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.95), 0 0 20px rgba(22, 163, 74, 0.7);
+}
+.led-box-verde {
+  border-color: rgba(34, 197, 94, 0.8);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5), inset 0 0 12px rgba(34, 197, 94, 0.25);
+}
+.led-beacon-verde {
+  background-color: #22c55e;
+  box-shadow: 0 0 12px #22c55e, 0 0 25px #16a34a;
+}
+
+/* 2. AMARELO LED (ATENÇÃO / ALERTA / PREVENTIVA) */
+.led-text-amarelo {
+  color: #fde047;
+  text-shadow: 0 0 8px rgba(234, 179, 8, 0.95), 0 0 20px rgba(202, 138, 4, 0.7);
+}
+.led-box-amarelo {
+  border-color: rgba(234, 179, 8, 0.8);
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.5), inset 0 0 12px rgba(234, 179, 8, 0.25);
+}
+.led-beacon-amarelo {
+  background-color: #eab308;
+  box-shadow: 0 0 12px #eab308, 0 0 25px #ca8a04;
+}
+
+/* 3. VERMELHO LED (PARADA / EM MANUTENÇÃO / URGENTE) */
+.led-text-vermelho {
+  color: #f87171;
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.95), 0 0 20px rgba(220, 38, 38, 0.7);
+}
+.led-box-vermelho {
+  border-color: rgba(239, 68, 68, 0.8);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5), inset 0 0 12px rgba(239, 68, 68, 0.25);
+}
+.led-beacon-vermelho {
+  background-color: #ef4444;
+  box-shadow: 0 0 12px #ef4444, 0 0 25px #dc2626;
+}
+
+/* Legado: mapeamento azul -> verde */
+.led-text-azul {
+  color: #4ade80;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.95), 0 0 20px rgba(22, 163, 74, 0.7);
+}
+.led-box-azul {
+  border-color: rgba(34, 197, 94, 0.8);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5), inset 0 0 12px rgba(34, 197, 94, 0.25);
+}
+.led-beacon-azul {
+  background-color: #22c55e;
+  box-shadow: 0 0 12px #22c55e, 0 0 25px #16a34a;
+}
+
+/* 4. SETA DE VOLTAR AZUL PULSANTE */
+@keyframes pulse-blue-glow {
+  0%, 100% {
+    color: #38bdf8;
+    filter: drop-shadow(0 0 3px rgba(56, 189, 248, 0.8)) drop-shadow(0 0 8px rgba(14, 165, 233, 0.6));
+    transform: scale(1) translateX(0);
+    opacity: 0.85;
+  }
+  50% {
+    color: #60a5fa;
+    filter: drop-shadow(0 0 10px rgba(96, 165, 250, 1)) drop-shadow(0 0 18px rgba(37, 99, 235, 0.9));
+    transform: scale(1.18) translateX(-2px);
+    opacity: 1;
+  }
+}
+
+.arrow-pulse-blue {
+  animation: pulse-blue-glow 1.5s ease-in-out infinite;
+  display: inline-block;
+  will-change: transform, filter, opacity;
+}
+
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+    overflow: auto !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

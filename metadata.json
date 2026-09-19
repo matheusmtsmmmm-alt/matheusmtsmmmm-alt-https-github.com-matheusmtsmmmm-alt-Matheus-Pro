@@ -1,0 +1,6 @@
+{
+  "name": "Kadu Manutenção",
+  "description": "Sistema Kadu Manutenção com tela inicial em LEDs redondos P1 (injetoras 1 a 13), P2 (injetoras A a O), configurações e relatórios técnicos com fotos.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
